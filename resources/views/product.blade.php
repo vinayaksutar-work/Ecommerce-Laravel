@@ -1,8 +1,8 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="container">
-    <div class="row mt-5 justify-content-center">
+<div class="container-fluid">
+    <div class="row justify-content-center">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
               @foreach($products as $key => $item)
@@ -29,6 +29,19 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="sr-only">Next</span>
             </a>
+        </div>
+    </div>
+    <div class="">
+        <h2 class="py-3">Trending Products</h2>
+        <div class="row">
+            @foreach ($products as $item)
+                <div class="col-sm-2 text-center">
+                    <img src="{{ $item->gallery }}" class="img-fluid">
+                    <div>
+                        <h5>{{ $item->name }}</h5>
+                    </div>
+                </div>
+            @endforeach
         </div>
     </div>
 </div>
