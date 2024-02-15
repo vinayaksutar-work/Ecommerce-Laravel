@@ -17,7 +17,6 @@
                     <img class="d-block w-100 slider-img" src="{{ $item->gallery }}" alt="First slide"/>
                     <div class="carousel-caption">
                         <h3>{{ $item->name }}</h3>
-                        <p>{{ $item->description }}</p>
                     </div>
                 </a>
               </div>
