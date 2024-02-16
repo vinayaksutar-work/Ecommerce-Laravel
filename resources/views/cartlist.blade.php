@@ -4,7 +4,7 @@
 <div class="container-fluid px-md-5">
     <h2 class="my-4">Cart List</h2>
     @foreach ($products as $item)
-    <table class="table table-bordered">
+    <table class="table table-bordered ">
         <tbody>
             <td>
                 <div class="row col-sm-12">

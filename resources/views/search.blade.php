@@ -10,8 +10,11 @@
                 <div class="card-body">
                     <h5 class="card-title">Name : {{ $item->name }}</h5>
                     <h6 class="card-subtitle">Price : {{ $item->price }}</h6>
-                    <button class="btn btn-success ">Add Cart</button>
-                    <button class="btn btn-primary ">Buy Now</button>
+                    <form action="/add_to_cart" method="POST">
+                        @csrf
+                        <input type="hidden" name="product_id" value="{{ $item->id }}">
+                        <button class="btn btn-success ">Add To Cart</button>
+                    </form>
                 </div>
             </div>
         </a>
