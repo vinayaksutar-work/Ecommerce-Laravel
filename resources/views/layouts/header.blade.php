@@ -1,3 +1,13 @@
+<?php
+
+use App\Http\Controllers\ProductController;
+$total=0;
+if(Session::has('user'))
+{
+    $total=ProductController::cartItem();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,7 +24,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-xl navbar-light bg-light">
-    <a class="navbar-brand" href="#">E-Comm</a>
+    <a class="navbar-brand" href="/">E-Comm</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -32,8 +42,20 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
         </ul>
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item"><a href="" class="nav-link px-md-3">Cart Item</a></li>
+        <ul class="nav navbar-nav navbar-right mx-2 ">
+            @if (Session::has('user'))
+            <li class=""><a href="/cartlist" class="px-2">Cart Item ({{ $total }})</a></li>
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                    {{ Session::get('user')['name']}}
+                <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li class=""><a href="/logout">Logout</a></li>
+                </ul>
+              </li>
+            @else
+                <li><a href="/login"></a></li>
+            @endif
         </ul>
     </div>
 </nav>
