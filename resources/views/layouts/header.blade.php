@@ -50,7 +50,7 @@ if(Session::has('user'))
                     {{ Session::get('user')['name']}}
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                  <li class=""><a href="/logout">Logout</a></li>
+                  <li class=""><a href="/logout" class="text-center">Logout</a></li>
                 </ul>
               </li>
             @else

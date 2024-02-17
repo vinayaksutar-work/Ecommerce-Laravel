@@ -25,7 +25,7 @@
                                 <p class="my-2">Delivery Status : {{ $order->status }}</p>
                                 <p class="my-2 ">Payment Status : {{ $order->payment_status }}</p>
                                 <p class="my-2 ">Payment Method : {{ $order->payment_method }}</p>
-                                <a href="/removeorder/{{ $order->id }}" class="btn btn-warning my-2 ">Remove</a>
+                                <a href="/removeorder/{{ $order->id }}" class="btn btn-warning my-2 ">Cancel Order</a>
                             </div>
                         </div>
                     </td>
