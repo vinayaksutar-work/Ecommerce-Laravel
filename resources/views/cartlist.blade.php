@@ -25,6 +25,7 @@
         </tbody>
     </table>
     @endforeach
+    <a href="/ordernow" class="btn btn-success my-3 ">Order Now</a>
 </div>
 
 @endsection

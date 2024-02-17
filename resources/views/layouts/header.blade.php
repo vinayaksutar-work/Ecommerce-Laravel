@@ -35,7 +35,7 @@ if(Session::has('user'))
                 <a class="nav-link" href="{{'/'}}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Orders</a>
+                <a class="nav-link" href="/myorder">Orders</a>
             </li>
             <form class="form-inline my-2 my-lg-0 " action="/search">
                 <input class="form-control mr-sm-2 " type="search" name="search_name" placeholder="Search" aria-label="Search">
