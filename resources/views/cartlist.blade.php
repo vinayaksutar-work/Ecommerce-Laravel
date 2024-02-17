@@ -3,29 +3,33 @@
 
 <div class="container-fluid px-md-5">
     <h2 class="my-4">Cart List</h2>
-    @foreach ($products as $item)
-    <table class="table table-bordered ">
-        <tbody>
-            <td>
-                <div class="row col-sm-12">
-                    <div class="col-sm-4">
-                        <a href="details/{{ $item->id }}">
-                        <img class="img-fluid" src="{{ $item->gallery }}">
-                        </a>
+    <div class="row">
+       <div class="col-sm-6">
+        @forelse ($products as $item)
+        <table class="table table-bordered ">
+            <tbody>
+                <td>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <a href="details/{{ $item->id }}">
+                            <img class="img-fluid" src="{{ $item->gallery }}">
+                            </a>
+                        </div>
+                        <div class="col-sm-6 pt-2">
+                            <h5>Name : {{ $item->name }}</h5>
+                            <p class="my-2">Price : {{ $item->price }} INR.</p>
+                            <p class="my-2">Category : {{ $item->category }}</p>
+                            <a href="/removecart/{{ $item->cart_id }}" class="btn btn-danger my-2 ">Remove</a>
+                        </div>
                     </div>
-                    <div class="col-sm-4">
-                        <h5 class="card-title">Name : {{ $item->name }}</h5>
-                        <h6 class="card-subtitle">Price : {{ $item->price }}</h6>
-                    </div>
-                    <div class="col-sm-4 text-center">
-                        <a href="/removecart/{{ $item->cart_id }}" class="btn btn-warning ">Remove Item</a>
-                    </div>
-                </div>
-            </td>
-        </tbody>
-    </table>
-    @endforeach
-    <a href="/ordernow" class="btn btn-success my-3 ">Order Now</a>
+                </td>
+            </tbody>
+        </table>
+        @empty
+            <td>ITEM NOT FOUND IN CART</td>
+        @endforelse
+       </div>
+    </div>
 </div>
 
 @endsection
